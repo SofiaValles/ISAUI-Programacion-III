@@ -7,4 +7,18 @@
 
 #Given two strings needle and haystack, return the index of the first occurrence of needle in haystack, or -1 if needle is not part of haystack.
 
- 
+#ejemplos con imput:
+haystack = input("Introduce la cadena haystack: ")
+needle = input("Introduce la cadena needle: ")
+
+#ejemplos con variables predeterminadas (remover # para que funcione y comentar ejemplos con imput):
+#haystack = "sadbutsad"
+#needle = "sad"
+
+if needle in haystack:
+    (print("La subcadena " + needle + " se encuentra en la cadena " + haystack + " en la posicion " + str(haystack.index(needle)) + "."))
+else:
+    print(print("La subcadena " + needle + " no se encuentra en la cadena " + haystack + " posicion -1."))
+
+
+
