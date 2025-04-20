@@ -4,31 +4,7 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Etiquetas HTML5</title>
-    <style>
-        body {
-            font-family: system-ui, sans-serif;
-            max-width: 900px;
-            margin: 2rem auto;
-            padding: 1rem;
-            background-color: #f0edea;
-            color: #143348;
-        }
-        h1 {
-            color: #2c5570;
-            border-bottom: 2px solid #b38188;
-            padding-bottom: 0.5rem;
-        }
-        ul {
-            columns: 3;
-            -webkit-columns: 3;
-            -moz-columns: 3;
-            gap: 2rem;
-            padding-left: 1rem;
-        }
-        li {
-            margin-bottom: 0.4rem;
-        }
-    </style>
+    <link rel="stylesheet" href="style.css">
 </head>
 <body>
     <h1>Curiosidades sobre "Baldur's Gate 3"</h1>
@@ -89,9 +65,16 @@
         <b>DOWN DOWN DOWN BY THE RIVEEEEER</b>.</p>
 
         <li>&lt;base&gt;</li>
-
+        <base href="https://baldursgate3.game/" target="_blank">
+        <p>El juego fue desarrollado por Larian Studios, creadores de la saga "Divinity: Original Sin".</p>
         
         <li>&lt;bdi&gt;</li>
+        <p> El nombre de Shadowheart en distintos idiomas:</p>
+        <ul>
+            <li>Español <bdi>Corazón Sombrío</bdi>: 60 puntos</li>
+            <li>Polaco <bdi>Posępne Serce</bdi>: 80 puntos</li>
+            <li>Portugués <bdi>Umbralma</bdi>: 90 puntos</li>
+          </ul>
         
         <li>&lt;bdo&gt;</li>
         <bdo dir="rtl">
@@ -108,7 +91,16 @@
             "La obra de Larian es, con mucha diferencia, una de las mejores experiencias del mundo de los videojuegos en años"
 
         <li>&lt;body&gt;</li>
+        <body>
+            <h1>La triología</h1>
+            <p>Baldur's Gate 3, como su nombre lo indica, es la tercera entrega de este videojuego que ya tiene su tiempo. El primero de ellos fué estrenado en 1998 y el 2 en el año 2000.</p>
+          </body>
+
         <li>&lt;br&gt;</li>
+        <h1>Combate</h1>
+
+        <p>El videojuego<br> Baldur's Gate 3 <br> cuenta con <br>combate por <br> turnos.</p>
+
         <li>&lt;button&gt;</li>
         <button type="button">Click Me!</button>
         <li>&lt;canvas&gt;</li>

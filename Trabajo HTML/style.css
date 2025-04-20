@@ -1,0 +1,25 @@
+
+    body {
+        font-family: system-ui, sans-serif;
+        max-width: 900px;
+        margin: 2rem auto;
+        padding: 1rem;
+        background-color: #e9ddd2;
+        color: #143348;
+    }
+    h1 {
+        color: #2c5570;
+        border-bottom: 2px solid #b38188;
+        padding-bottom: 0.5rem;
+    }
+    ul {
+        columns: 3;
+        -webkit-columns: 3;
+        -moz-columns: 3;
+        gap: 2rem;
+        padding-left: 1rem;
+    }
+    li {
+        margin-bottom: 0.4rem;
+    }
+
