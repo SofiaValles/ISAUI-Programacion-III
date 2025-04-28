@@ -1,0 +1,39 @@
+.container {
+    width: 80%;
+    margin: 0 auto;
+    padding: 20px;
+    background-color: #f399c3;
+    border-radius: 5px;
+    display: flex; /* Usamos Flexbox */
+    justify-content: center; /* Centra horizontalmente */
+    gap: 20px; /* Espaciado entre las cajas */
+    text-align: center;
+}
+
+.box {
+    width: 100px;
+    height: 100px;
+    border-radius: 5px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: white;
+    font-weight: bold;
+}
+
+.box1 {
+    background-color: #ff5733; /* Color para la primera caja */
+}
+
+.box2 {
+    background-color: #33c1ff; /* Color para la segunda caja */
+}
+
+.box3 {
+    background-color: #75ff33; /* Color para la tercera caja */
+}
+
+/* Cambiar a flex-direction: column */
+.container.column {
+    flex-direction: column;
+}

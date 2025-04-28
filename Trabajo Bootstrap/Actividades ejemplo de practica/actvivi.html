@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Actividad Flexbox</title>
+    <link rel="stylesheet" href="activivi.css">
+</head>
+<body>
+    <div class="container">
+        <div class="box box1">Caja 1</div>
+        <div class="box box2">Caja 2</div>
+        <div class="box box3">Caja 3</div>
+    </div>
+
+    <button onclick="toggleDirection()">Cambiar Dirección</button>
+
+    <script>
+        function toggleDirection() {
+            const container = document.querySelector('.container');
+            container.classList.toggle('column');
+        }
+    </script>
+</body>
+</html>
