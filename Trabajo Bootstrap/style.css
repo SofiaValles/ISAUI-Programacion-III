@@ -71,3 +71,31 @@ button {
     list-style-type: none;
     padding: 0;
 } */
+
+img {
+    border-radius: 100px;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+    width: 200px;
+    border-color: #c77d7d;
+    border-style: outset;
+}
+body{
+    background-color: #fcf0da;
+    padding: 20px;
+    text-align: center;
+}
+
+.grid-container {
+display: grid;
+grid-template-columns: repeat(3, 1fr);
+gap: 5px;
+font-style: bold;
+}
+.grid-item {
+background-color: rgb(202, 139, 132);
+padding: 10px;
+text-align: center;
+font-style: bold;
+border: 3px solid #fcf0da;
+border-radius: 100px;
+}
