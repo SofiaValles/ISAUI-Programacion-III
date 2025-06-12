@@ -99,33 +99,25 @@
             <!-- Validación de que no haya letras en apellido o nombre-->
         <script>
         document.getElementById('nombre').addEventListener('invalid', function(event) {
-            if (this.value === '') {
+            if (!/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]*$/.test(this.value)) {
+                this.setCustomValidity('El nombre solo puede contener letras y espacios.');
+            } else if (this.value === '') {
                 this.setCustomValidity('Por favor, ingrese su nombre.');
             } else {
                 this.setCustomValidity('');
             }
         });
-        document.getElementById('nombre').addEventListener('input', function(event) {
-            if (!/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]*$/.test(this.value)) {
-                this.setCustomValidity('El nombre solo puede contener letras y espacios.');
-            } else {
-                this.setCustomValidity('');
-            }
-        });
 
-        document.getElementById('apellido').addEventListener('invalid', function(event) {
-            if (this.value === '') {
+
+
+    document.getElementById('apellido').addEventListener('input', function(event) {
+            if (!/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]*$/.test(this.value)) {
+                this.setCustomValidity('El apellido solo puede contener letras y espacios.');
+            } else if (this.value === '') {
                 this.setCustomValidity('Por favor, ingrese su apellido.');
             } else {
                 this.setCustomValidity('');
-            }
-        });
-        document.getElementById('apellido').addEventListener('input', function(event) {
-            if (!/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]*$/.test(this.value)) {
-                this.setCustomValidity('El apellido solo puede contener letras y espacios.');
-            } else {
-                this.setCustomValidity('');
-            }
+        }
         });
         document.getElementById('email').addEventListener('invalid', function(event) {
             if (this.value === '') {
