@@ -19,6 +19,7 @@
         <script src="" async defer></script>
         <div class="containerPrincipal"></div>
         <form id="FormularioRegistro" class="form-horizontal">
+
             <div class="form-group">
                 <label for="nombre">Nombre:</label>
                 <input type="text" class="form-control" id="nombre" name="nombre" required>
@@ -84,6 +85,69 @@
                 </div>
             </div>
             </div>
+
+
+    <script>
+
+        document.getElementById('nombre').addEventListener('input', function(event) {
+    if (!/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]*$/.test(this.value)) {
+        this.setCustomValidity('El nombre solo puede contener letras y espacios.');
+    } else {
+        this.setCustomValidity('');
+    }
+});
+
+        document.getElementById('apellido').addEventListener('input', function(event) {
+    if (!/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]*$/.test(this.value)) {
+        this.setCustomValidity('El apellido solo puede contener letras y espacios.');
+    } else {
+        this.setCustomValidity('');
+    }
+});
+        
+        document.getElementById('email').addEventListener('invalid', function(event) {
+            if (this.value === '') {
+                this.setCustomValidity('Por favor, ingrese su email.');
+            } else if (!this.value.match(/^[^@]+@[^@]+\.[a-zA-Z]{2,}$/)) {
+                this.setCustomValidity('Por favor, ingrese un email válido (ejemplo: usuario@dominio.com).');
+            } else {
+                this.setCustomValidity('');
+            }
+        });
+        document.getElementById('email').addEventListener('input', function(event) {
+            this.setCustomValidity('');
+        });
+
+        document.getElementById('password').addEventListener('invalid', function(event) {
+            this.setCustomValidity('Por favor, ingrese su contraseña.');
+        });
+        document.getElementById('password').addEventListener('input', function(event) {
+            this.setCustomValidity('');
+        });
+
+        document.getElementById('genero').addEventListener('invalid', function(event) {
+            this.setCustomValidity('Por favor, seleccione su género.');
+        });
+        document.getElementById('genero').addEventListener('input', function(event) {
+            this.setCustomValidity('');
+        });
+
+        document.getElementById('terminos').addEventListener('invalid', function(event) {
+            this.setCustomValidity('Debe aceptar los términos y condiciones.');
+        });
+        document.getElementById('terminos').addEventListener('input', function(event) {
+            this.setCustomValidity('');
+        });
+
+        document.getElementById('FormularioRegistro').addEventListener('submit', function(event) {
+            event.preventDefault(); 
+            if (this.checkValidity()) {
+                $('#exampleModal').modal('show');
+            } else {
+                this.reportValidity();
+            }
+        });
+</script>
 
 
 
