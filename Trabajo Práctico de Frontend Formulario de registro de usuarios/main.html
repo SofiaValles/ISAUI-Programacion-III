@@ -66,7 +66,7 @@
             document.getElementById('FormularioRegistro').addEventListener('submit', function(event) {
                 event.preventDefault(); 
                 if (this.checkValidity()) {
-                    $('#exampleModal').modal('show');
+                    $('#resumenModal').modal('show');
                 } else {
                     this.reportValidity();
                 }
@@ -89,11 +89,49 @@
                 </div>
                 <div class="modal-footer">
                     <button type="button" class="btn btn-secondary" data-dismiss="modal">Cerrar</button>
-                    <button type="button" class="btn btn-primary">Guardar cambios</button>
+                    <button type="button" class="btn btn-primary">Aceptar</button>
                 </div>
                 </div>
             </div>
             </div>
+
+
+
+
+
+
+
+
+            <!-- Modal de resumen -->
+            <div class="modal fade" id="resumenModal" tabindex="-1" role="dialog" aria-labelledby="resumenModalLabel" aria-hidden="true">
+            <div class="modal-dialog" role="document">
+                <div class="modal-content">
+                <div class="modal-header">
+                    <h5 class="modal-title" id="resumenModalLabel">Resumen de datos</h5>
+                    <button type="button" class="close" data-dismiss="modal" aria-label="Cerrar">
+                    <span aria-hidden="true">&times;</span>
+                    </button>
+                </div>
+                <div class="modal-body" id="resumenContenido"></div>
+
+                
+                <div class="modal-footer">
+                    <button type="button" class="btn btn-secondary" data-dismiss="modal">Editar</button>
+                    <button type="button" class="btn btn-primary" id="confirmarEnvio">Confirmar y Enviar</button>
+                </div>
+                </div>
+            </div>
+            </div>
+
+
+
+
+
+
+
+
+
+
 
 
             <!-- Validación de que no haya letras en apellido o nombre-->
@@ -107,17 +145,29 @@
                 this.setCustomValidity('');
             }
         });
+    document.getElementById('nombre').addEventListener('input', function(event) {
+            if (!/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]*$/.test(this.value)) {
+                this.setCustomValidity('El nombre solo puede contener letras y espacios.');
+            } else {
+                this.setCustomValidity('');
+            }
+        });
 
-
-
-    document.getElementById('apellido').addEventListener('input', function(event) {
+    document.getElementById('apellido').addEventListener('invalid', function(event) {
             if (!/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]*$/.test(this.value)) {
                 this.setCustomValidity('El apellido solo puede contener letras y espacios.');
             } else if (this.value === '') {
                 this.setCustomValidity('Por favor, ingrese su apellido.');
             } else {
                 this.setCustomValidity('');
-        }
+            }
+        });
+    document.getElementById('apellido').addEventListener('input', function(event) {
+            if (!/^[a-zA-ZáéíóúÁÉÍÓÚñÑ\s]*$/.test(this.value)) {
+                this.setCustomValidity('El apellido solo puede contener letras y espacios.');
+            } else {
+                this.setCustomValidity('');
+            }
         });
         document.getElementById('email').addEventListener('invalid', function(event) {
             if (this.value === '') {
@@ -153,14 +203,55 @@
             this.setCustomValidity('');
         });
 
+        // Mostrar resumen antes de enviar
         document.getElementById('FormularioRegistro').addEventListener('submit', function(event) {
-            event.preventDefault(); 
+            event.preventDefault();
             if (this.checkValidity()) {
-                $('#exampleModal').modal('show');
+                // Obtener los valores del formulario
+                const nombre = document.getElementById('nombre').value;
+                const apellido = document.getElementById('apellido').value;
+                const email = document.getElementById('email').value;
+                const generoSelect = document.getElementById('genero');
+                const genero = generoSelect.options[generoSelect.selectedIndex].text;
+                const terminos = document.getElementById('terminos').checked ? 'Sí' : 'No';
+
+                // Crear el resumen
+                const resumenHTML = `
+                    <p><strong>Nombre:</strong> ${nombre}</p>
+                    <p><strong>Apellido:</strong> ${apellido}</p>
+                    <p><strong>Email:</strong> ${email}</p>
+                    <p><strong>Género:</strong> ${genero}</p>
+                    <p><strong>Acepta términos:</strong> ${terminos}</p>
+                `;
+                document.getElementById('resumenContenido').innerHTML = resumenHTML;
+
+                // Mostrar solo el modal de resumen
+                $('#resumenModal').modal('show');
             } else {
                 this.reportValidity();
             }
-        });
+});
+
+// Enviar el formulario solo si el usuario confirma
+document.getElementById('confirmarEnvio').addEventListener('click', function() {
+    $('#resumenModal').modal('hide');
+    // Aquí puedes mostrar el modal de éxito o enviar el formulario
+    $('#exampleModal').modal('show');
+    // Si quieres enviar realmente el formulario a un servidor, usa:
+    // document.getElementById('FormularioRegistro').submit();
+});
+
+
+
+
+
+
+
+
+
+
+
+        
         </script>
 
         <!-- Links para usar JavaScript-->
