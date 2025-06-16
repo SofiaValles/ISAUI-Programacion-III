@@ -1,8 +1,12 @@
 h1{
     padding-top: 2%;
     text-align: center;
-    background-color: rgb(177, 253, 247);
+;
 }
-.container{
-background-color: rgb(177, 253, 247);
+
+
+.main{
+   
+    background-color: rgb(219, 19, 19);
+    background-image: url(https://static1.makeuseofimages.com/wordpress/wp-content/uploads/2023/04/a-person-browsing-stock-photos-and-images-on-a-laptop.jpg);
 }
