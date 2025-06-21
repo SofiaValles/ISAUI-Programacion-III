@@ -3,11 +3,8 @@ h1{
     text-align: center;
 }
 
-
 .main{
-   
-    background-color: rgb(255, 255, 255);
-    background-image: url(https://wallpapers.com/images/hd/simple-background-nfe3kq9cr13oqs3l.jpg);
+    background-image: url(fondo.jpg);
     background-size: cover;
 }
 
