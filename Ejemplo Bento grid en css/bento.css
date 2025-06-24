@@ -1,8 +1,8 @@
 .grid {
   background: hsl(36, 100%, 99%);
   width: 100%;
-  max-width: 1500px;
-  height: 1000px;
+  max-width: 1200px;
+  height: 600px;
   display: grid;
   gap: 1.5vw;
   padding: 1vw;
@@ -16,24 +16,29 @@
     "aside3 aside3 aside4 aside4 aside5 aside5 ";
 }
 .item {
-  border: 2px solid #464545;
+  border: 2px solid #000000;
   border-radius: 5px;
 }
 
 .grid .item:nth-child(1) {
   grid-area: hero;
+  background-color: hsl(98, 100%, 70%);
 }
 .grid .item:nth-child(2) {
   grid-area: aside2;
+  background-color: hsl(187, 100%, 70%);
 }
 
 .grid .item:nth-child(3) {
   grid-area: aside3;
+  background-color: hsl(24, 100%, 70%);
 }
 .grid .item:nth-child(4) {
   grid-area: aside4;
+  background-color: hsl(342, 100%, 70%);
 }
 
 .grid .item:nth-child(5) {
   grid-area: aside5;
+  background-color: hsl(61, 100%, 70%);
 }
